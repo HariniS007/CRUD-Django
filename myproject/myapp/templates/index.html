@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Persons List</title>
+</head>
+<body>
+    <h1>Persons</h1>
+    <ul>
+        {% for person in persons %}
+        <li>
+            {{ person.name }} - {{ person.age }}
+            <a href="{% url 'edit_person' person._id %}">Edit</a>
+            <a href="{% url 'delete_person' person._id %}">Delete</a>
+        </li>
+    {% endfor %}
+    
+    </ul>
+    <a href="{% url 'add_person' %}">Add Person</a>
+</body>
+</html>

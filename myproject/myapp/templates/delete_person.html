@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Delete Person</title>
+</head>
+<body>
+    <h1>Are you sure you want to delete {{ person.name }}?</h1>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Confirm</button>
+    </form>
+    <a href="{% url 'index' %}">Cancel</a>
+</body>
+</html>
